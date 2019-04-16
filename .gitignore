@@ -1,0 +1,9 @@
+*.pdf
+*.midi
+*.mid
+*.eps
+*.ps
+*.png
+*.swp
+*.*~
+**/png
