@@ -23,21 +23,21 @@ diesIraeText = \lyricmode {
   }
   \score {
     <<
-    \new Voice = "melody" \relative c'' {
-      \set Score.proportionalNotationDuration = #(ly:make-moment 1/16)
-      \cadenzaOn
-      c8 b c a b g a a4 \divisioMaior
-      c8 c (d) c (b) a (g) b c b a4 \divisioMaior \pageBreak
-      \stopStaff
-      s
-    }
-    \new Lyrics \lyricsto "melody" \diesIraeText
+      \new Voice = "melody" \relative c'' {
+        \set Score.proportionalNotationDuration = #(ly:make-moment 1/16)
+        \cadenzaOn
+        c8 b c a b g a a4 \divisioMaior
+        c8 c (d) c (b) a (g) b c b a4 \divisioMaior \pageBreak
+        \stopStaff
+        s
+      }
+      \new Lyrics \lyricsto "melody" \diesIraeText
     >>
     \layout {
       \context {
-          \Staff
-          \remove Time_signature_engraver
-          \remove Bar_engraver
+        \Staff
+        \remove Time_signature_engraver
+        \remove Bar_engraver
       }
     }
     \midi {
@@ -49,7 +49,7 @@ diesIraeText = \lyricmode {
 global = {
   \time 6/8
   \key c \minor
-} 
+}
 
 \book {
   \paper {
@@ -62,16 +62,16 @@ global = {
       \clef bass
       \global
       es2.-> \f
-      d-> es-> c-> d-> bes-> c-> \break 
-      c-> 
-      es-> es-> f-> es-> d-> c-> \break 
+      d-> es-> c-> d-> bes-> c-> \break
+      c->
+      es-> es-> f-> es-> d-> c-> \break
       bes-> d-> es->
-      d-> ~ d4. ~ d4 c8 c2. -> ~ c4. s \bar "" \pageBreak 
+      d-> ~ d4. ~ d4 c8 c2. -> ~ c4. s \bar "" \pageBreak
       s
     }
     \layout {
       \context {
-        \remove Time_signature_engraver 
+        \remove Time_signature_engraver
       }
     }
     \midi {
@@ -86,7 +86,7 @@ global = {
     indent = 0 \in
   }
   \score {
-    \new Staff \relative es' { 
+    \new Staff \relative es' {
       \global
       \partial 4.
       es4. \f d es c d bes c
@@ -116,7 +116,7 @@ global = {
     \new Staff \relative es'' {
       \global
       r8 r es \f d4 es8 |
-      c4 d8 bes4 c8 c4 es8 es4 f8 es4 d8 c4 bes8 d4 es8 d4 c8 
+      c4 d8 bes4 c8 c4 es8 es4 f8 es4 d8 c4 bes8 d4 es8 d4 c8
       c8 \< (d16 e f32 g a b c4) \f r8
       \pageBreak
       s
@@ -140,7 +140,7 @@ global = {
   }
   \score {
     \new Staff \relative b {
-      \global 
+      \global
       b16 \p \< c d e fis g a b c d e fis |
       g4. \f a |
       b8 b c d4 e8 \sf \stopStaff \break
@@ -148,8 +148,8 @@ global = {
     }
     \layout {
       \context {
-         \Staff
-         \remove Time_signature_engraver
+        \Staff
+        \remove Time_signature_engraver
       }
     }
     \midi {
@@ -191,5 +191,46 @@ global = {
     \midi {
       \tempo 4. = 104
     }
+  }
+}
+
+\book {
+  \paper {
+    #(set-paper-size "size 5.5-1")
+    indent = 0 \in
+  }
+  \score {
+    \new Staff \relative g {
+      \clef bass
+      \global
+      <<
+        {
+          g4. aes
+          a!8 a bes b4 c8 |
+          b!4 bes8 a4 aes8 |
+          g fis f s4. \bar ""
+        }
+        \\
+        {
+          es4. f |
+          fis8 fis g gis4 a8 |
+          gis4 g8 fis4 f8 |
+          e! es d s4.
+        }
+        \\
+        \new Dynamics {
+          s2. \ppp
+        }
+      >>
+      \break
+      s
+    }
+    \layout {
+      \context {
+        \Staff
+        \remove Time_signature_engraver
+      }
+    }
+    \midi { \tempo 4. = 104 }
   }
 }
