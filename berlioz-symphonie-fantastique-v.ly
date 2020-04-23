@@ -121,7 +121,7 @@ global = {
   \score {
     \new Staff \relative es'' {
       \global
-      \mark "High woodwinds and pizzicato (plucked) violins"
+      \mark "High woodwinds and pizzicato (plucked) violins (sounds an octave higher)"
       r8 r es \f d4 es8 |
       c4 d8 bes4 c8 c4 es8 es4 f8 es4 d8 c4 bes8 d4 es8 d4 c8
       c8 \< (d16 e f32 g a b c4) \f r8
@@ -294,6 +294,36 @@ global = {
         \Staff
         \remove Time_signature_engraver
       }
+    }
+  }
+}
+
+\book {
+  \paper {
+    #(set-paper-size "size 4.5-2")
+    indent = 0 \in
+  }
+  \score {
+    \new Staff \relative g' { 
+      \time 6/8
+      \mark "Clarinet"
+      \once \override TextScript #'font-size = #-2
+      r4. ^\markup \italic "as if from afar" r8 r g \ppp |
+      g4 \slashedGrace b8 c g4 \slashedGrace dis'8 e
+      \slashedGrace dis e4 \slashedGrace e8 f8 f4 \trill e8 |
+      e4 \trill d8 d4 \trill c8 |
+      c8. d16 c8 b4 
+      \set crescendoText = \markup \italic "cresc. poco a poco"
+      \set crescendoSpanner = #'text
+        d,8 \<
+      d4 \slashedGrace fis8 g d4 \slashedGrace ais'8 b |
+      g4 \slashedGrace cis8 d d8. \trill e16 fis8 |
+      \slashedGrace fis g4 \slashedGrace a8 g g4 \trill f8 \!
+    
+    }
+    \layout {}
+    \midi {
+      \tempo 4. = 112
     }
   }
 }
