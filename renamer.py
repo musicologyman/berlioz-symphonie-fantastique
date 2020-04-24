@@ -13,7 +13,10 @@ def read_rename_spec(filename):
 
 rename_spec = read_rename_spec('rename.csv')
 
-for spec in rename_spec:
-  os.rename(*spec) 
+for oldname, newname in rename_spec:
+  if os.path.exists(oldname):
+    os.rename(oldname, newname) 
+  else:
+    print("The file {} does not exist.".format(oldname))
 
 

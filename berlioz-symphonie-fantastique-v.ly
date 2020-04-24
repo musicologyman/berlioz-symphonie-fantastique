@@ -304,7 +304,8 @@ global = {
     indent = 0 \in
   }
   \score {
-    \new Staff \relative g' { 
+    \new Staff \with { midiInstrument = #"clarinet" } 
+    \relative g' { 
       \time 6/8
       \mark "Clarinet"
       \once \override TextScript #'font-size = #-2
