@@ -64,7 +64,9 @@ global = {
     ragged-last = ##f
   }
   \score {
-    \new Staff \relative es {
+    \new Staff \with {
+      midiInstrument = #"french horn"
+    } \relative es {
       \clef bass
       \global
       \mark "Bassoons and ophicleides"
@@ -92,7 +94,10 @@ global = {
     indent = 0 \in
   }
   \score {
-    \new Staff \relative es' {
+    \new Staff \with {
+      midiInstrument = #"trombone"
+    }
+      \relative es' {
       \mark "Horns and trombones"
       \global
       \partial 4.
@@ -119,7 +124,11 @@ global = {
     top-margin = 0.2 \in
   }
   \score {
-    \new Staff \relative es'' {
+    \new Staff \with {
+      midiInstrument = #"flute"
+    }
+    
+      \relative es'' {
       \global
       \mark "High woodwinds and pizzicato (plucked) violins (sounds an octave higher)"
       r8 r es \f d4 es8 |
